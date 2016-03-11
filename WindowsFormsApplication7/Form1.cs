@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace WindowsFormsApplication7
 {
@@ -23,8 +24,15 @@ namespace WindowsFormsApplication7
             for (int i = 0; i < lines.Length; i++)
             {
                 lines[i] = lines[i] + @" \";
+                
             }
+            //iz zadnjeg reda brišem zadnji znak backspacea koji ne treba
+            lines[lines.Length - 1] = lines[lines.Length - 1].Substring(0, lines[lines.Length - 1].Length - 1);
+
             textBox1.Lines = lines;
+            string noviSring = lines[lines.Length - 1].Substring(0, lines[lines.Length - 1].Length-1);
+
+            MessageBox.Show(noviSring);
         }
     }
 }
